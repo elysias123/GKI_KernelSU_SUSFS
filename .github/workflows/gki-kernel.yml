@@ -3,54 +3,54 @@ permissions:
   contents: write  # Allow writing to repository contents (for pushing tags)
   actions: write   # Allows triggering actions
 
-on:
+于:
   workflow_call: # This allows this workflow to be called from another workflow
     inputs:
       make_release:
         required: true
-        type: boolean
-        default: true
+        输入: boolean
+        默认: true
       android_version:
         required: true
-        type: string
+        输入: string
       kernel_version:
         required: true
-        type: string
+        输入: string
       sub_level:
         required: true
-        type: string
+        输入: string
       os_patch_level:
         required: true
-        type: string
+        输入: string
       kernelsu_variant:
         required: true
-        type: string
+        输入: string
       kernelsu_branch:
         required: true
-        type: string
+        输入: string
       # kernelsu_branch_other:
       #   required: false
       #   type: string
       use_O2:
         required: true
-        type: boolean
-        default: false
+        输入: boolean
+        默认: false
       version:
         required: false
-        type: string
+        输入: string
       use_zram:
         required: true
-        type: boolean
-        default: true
+        输入: boolean
+        默认: true
       use_kpm:
         required: true
-        type: boolean
-        default: true
+        输入: boolean
+        默认: true
       BBG:
         description: "是否启用内核层面阻止对关键分区/设备节点的非法写入(LSM)？"
         required: true
-        type: boolean
-        default: true
+        输入: boolean
+        默认: true
 jobs:
   build-kernel-kernelsu-susfs:
     runs-on: ubuntu-latest
@@ -517,7 +517,7 @@ jobs:
           cd "$CONFIG"
           
           # 构建时间
-          BUILD_TIME=$(TZ='Asia/Shanghai' date +"%Y%m%d%H%M")
+          BUILD_TIME="#1 SMP PREEMPT 9月1日，周一06:06:55 UTC 2025")
           CURRENT_TIME=$(TZ='Asia/Shanghai' date +"%a %b %d %H:%M:%S UTC+8 %Y")
           
           if [ ! -z ${{ inputs.version }} ]; then
